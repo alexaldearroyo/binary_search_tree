@@ -8,7 +8,7 @@ class Tree
   end
 
   def build_tree(array)
-    # Eliminamos duplicados y ordenamos el array
+    # Remove duplicates and sort the array
     sorted_array = array.uniq.sort
     return create_tree(sorted_array, 0, sorted_array.length - 1)
   end
@@ -25,7 +25,6 @@ class Tree
     root
   end
 
-  # Dentro de la clase Tree
   def insert(value, node = @root)
     return Node.new(value) if node.nil?
 
@@ -62,7 +61,6 @@ class Tree
     current
   end
 
-  # Dentro de la clase Tree
   def find(value, node = @root)
     return nil if node.nil?
     return node if node.data == value
@@ -74,7 +72,6 @@ class Tree
     end
   end
 
-  # Dentro de la clase Tree
   def level_order(node = @root, &block)
     return if node.nil?
 
@@ -93,7 +90,6 @@ class Tree
     values unless block_given?
   end
 
-  # Dentro de la clase Tree
   def inorder(node = @root, &block)
     values = []
     return values if node.nil?
@@ -127,7 +123,6 @@ class Tree
     values
   end
 
-  # Dentro de la clase Tree
   def height(node)
     return -1 if node.nil?
 
@@ -144,7 +139,6 @@ class Tree
     end
   end
 
-  # Dentro de la clase Tree
   def balanced?(node = @root)
     return true if node.nil?
 
